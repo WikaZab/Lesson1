@@ -54,14 +54,12 @@
                 microTask
                     .then(result => {
                         console.log('micro 1 выполнена!');
-                })
-                    .catch(error =>{
-                        console.log('Ошибка загрузки данных 1 micro')
-                    })
-                    .finally(()=> {
                         document.getElementById('box').style.backgroundColor='red';
                         document.getElementById('box').style.fontSize='30px'; // тут рендер, на изменение DOM
                         console.log('Первый рендер выполнен!');
+                })
+                    .catch(error =>{
+                        console.log('Ошибка загрузки данных 1 micro')
                     })
         },500);
 
@@ -83,9 +81,9 @@
                 .catch(error =>{
                     console.log('Ошибка загрузки данных 2 micro!')
                 });
-            Promise.resolve().then(()=>{
-                console.log('micro 3 выполнена!');
-            })
+                Promise.resolve().then(()=>{
+                    console.log('micro 3 выполнена!');
+                })
         },2000);
 
         // Третья Макрозадача
@@ -97,13 +95,10 @@
             microTask3
                 .then((data) => {
                 console.log('micro 4 выполнена!');
-
-            })
-                .finally(()=> {
-                    document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
+                document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
                     document.getElementById('box').style.backgroundColor='green';
                     console.log('Второй рендер выполнен!');
-                })
+            })
         },5000);
     }
 </script>
