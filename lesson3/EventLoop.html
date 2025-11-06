@@ -74,16 +74,16 @@
                     reject('Ошибка загрузки данных micro 2!')
                 }
             });
-            microTask2
-                .then(result => {
-                    console.log('micro 2 выполнена!');
-                })
-                .catch(error =>{
-                    console.log('Ошибка загрузки данных 2 micro!')
-                });
-                Promise.resolve().then(()=>{
-                    console.log('micro 3 выполнена!');
-                })
+                microTask2
+                    .then(result => {
+                        console.log('micro 2 выполнена!');
+                    })
+                    .catch(error =>{
+                        console.log('Ошибка загрузки данных 2 micro!')
+                    });
+                    Promise.resolve().then(()=>{
+                        console.log('micro 3 выполнена!');
+                    })
         },2000);
 
         // Третья Макрозадача
@@ -92,13 +92,13 @@
             const microTask3 = new Promise((resolve) => {
                 resolve('Данные micro 4!');
             });
-            microTask3
-                .then((data) => {
-                console.log('micro 4 выполнена!');
-                document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
+                microTask3
+                    .then((data) => {
+                    console.log('micro 4 выполнена!');
+                    document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
                     document.getElementById('box').style.backgroundColor='green';
                     console.log('Второй рендер выполнен!');
-            })
+                })
         },5000);
     }
 </script>
