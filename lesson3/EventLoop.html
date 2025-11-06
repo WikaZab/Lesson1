@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Стили для кнопки */
+        button {
+            background: #667eea;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+
+        }
+        /* Стили для блока */
+        #box {
+            background-color: #667eea;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            font-size: 18px;
+            color: #000000;
+
+        }
+    </style>
+</head>
+<body>
+<button onClick="Tasks()">
+    Нажми для запуска функции
+</button>
+<div id="box">Тестовый блок</div>
+<script >
+    function Tasks() {
+        // Первая Макрозадача
+        setTimeout(()=>{
+            console.log('Запущена 1 МАКРОЗАДАЧА');
+            const microTask = new Promise((resolve,reject) => {
+                console.log('Создание 1 micro');
+                const success = true; // true/false <=> resolve/reject
+                if(success){
+                    resolve('Данные micro 1 получены!');
+                } else {
+                    reject('Ошибка загрузки данных micro 1!')
+                }
+            });
+                microTask
+                    .then(result => {
+                        console.log('micro 1 выполнена!');
+                })
+                    .catch(error =>{
+                        console.log('Ошибка загрузки данных 1 micro')
+                    })
+                    .finally(()=> {
+                        document.getElementById('box').style.backgroundColor='red';
+                        document.getElementById('box').style.fontSize='30px'; // тут рендер, на изменение DOM
+                        console.log('Первый рендер выполнен!');
+                    })
+        },500);
+
+        // Вторая Макрозадача
+        setTimeout(()=>{
+            console.log('Запущена 2 МАКРОЗАДАЧА');
+            const microTask2 = new Promise((resolve,reject) => {
+                console.log('Создание 2 micro');
+                const success = true; // true/false <=> resolve/reject
+                if(success){
+                    resolve('Данные micro 2 получены!');
+                } else {
+                    reject('Ошибка загрузки данных micro 2!')
+                }
+            });
+            microTask2
+                .then(result => {
+                    console.log('micro 2 выполнена!');
+                })
+                .catch(error =>{
+                    console.log('Ошибка загрузки данных 2 micro!')
+                });
+            Promise.resolve().then(()=>{
+                console.log('micro 3 выполнена!');
+            })
+        },2000);
+
+        // Третья Макрозадача
+        setTimeout(()=>{
+            console.log('Запущена 3 МАКРОЗАДАЧА');
+            const microTask3 = new Promise((resolve) => {
+                console.log('Создание 4 micro!');
+                resolve('Данные micro 4!');
+            });
+            microTask3
+                .then((data) => {
+                console.log('micro 4 выполнена!');
+
+            })
+                .finally(()=> {
+                    document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
+                    document.getElementById('box').style.backgroundColor='green';
+                    console.log('Второй рендер выполнен!');
+                })
+        },5000);
+    }
+</script>
+</body>
+</html>
