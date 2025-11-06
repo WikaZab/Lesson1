@@ -44,7 +44,6 @@
         setTimeout(()=>{
             console.log('Запущена 1 МАКРОЗАДАЧА');
             const microTask = new Promise((resolve,reject) => {
-                console.log('Создание 1 micro');
                 const success = true; // true/false <=> resolve/reject
                 if(success){
                     resolve('Данные micro 1 получены!');
@@ -70,7 +69,6 @@
         setTimeout(()=>{
             console.log('Запущена 2 МАКРОЗАДАЧА');
             const microTask2 = new Promise((resolve,reject) => {
-                console.log('Создание 2 micro');
                 const success = true; // true/false <=> resolve/reject
                 if(success){
                     resolve('Данные micro 2 получены!');
@@ -94,7 +92,6 @@
         setTimeout(()=>{
             console.log('Запущена 3 МАКРОЗАДАЧА');
             const microTask3 = new Promise((resolve) => {
-                console.log('Создание 4 micro!');
                 resolve('Данные micro 4!');
             });
             microTask3
