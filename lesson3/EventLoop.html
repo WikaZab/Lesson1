@@ -95,8 +95,8 @@
                 microTask3
                     .then((data) => {
                     console.log('micro 4 выполнена!');
-                    document.getElementById('box').textContent='Изменение содержимого блока'; // тут рендер, на изменение DOM
-                    document.getElementById('box').style.backgroundColor='green';
+                    document.getElementById('box').textContent='Изменение содержимого блока';
+                    document.getElementById('box').style.backgroundColor='green';// тут рендер, на изменение DOM
                     console.log('Второй рендер выполнен!');
                 })
         },5000);
