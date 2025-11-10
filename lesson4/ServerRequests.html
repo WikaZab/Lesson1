@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1>Controller with API Fetch</h1>
+    <div class="button-group">
+        <button class="get-all" onclick="getAllTasks()">Все задачи</button>
+        <button class="get-by-id" onclick="getTaskById()">Задача по id</button>
+        <button class="post" onclick="postTask()">Создать новую задачу</button>
+        <button class="patch" onclick="patchTask()">Изменить задачу</button>
+        <button class="delete" onclick="deleteTask()">Удалить задачу</button>
+    </div>
+    <h1>API XML HTTP Request</h1>
+    <div class="button-group">
+        <button class="get-all" onclick="getAllTasksXml()">Все задачи</button>
+        <button class="get-by-id" onclick="getTaskByIdXml()">Задача по id</button>
+        <button class="post" onclick="postTaskXml()">Создать новую задачу</button>
+        <button class="patch" onclick="patchTaskXml()">Изменить задачу</button>
+        <button class="delete" onclick="deleteTaskXml()">Удалить задачу</button>
+    </div>
+</div>
+<script type="module" src="App.js"></script>
+</body>
+</html>
