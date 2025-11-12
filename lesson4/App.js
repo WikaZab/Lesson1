@@ -13,7 +13,7 @@ window.getAllTasks = async function getAllTasks() {
 }
 
 window.getTaskById = async function getTaskById() {
-    await controller.getTaskById(540);
+    await controller.getTaskById(648);
 }
 
 window.postTask = async function postTask() {
@@ -24,13 +24,13 @@ window.postTask = async function postTask() {
 }
 
 window.patchTask = async function patchTask() {
-    await controller.patchTask(383, {
+    await controller.patchTask(649, {
         isCompleted: false
     });
 }
 
 window.deleteTask = async function deleteTask() {
-    await controller.deleteTask(566);
+    await controller.deleteTask(750);
 }
 
 
@@ -44,7 +44,7 @@ window.getAllTasksXml = async function getAllTasksXml() {
 }
 
 window.getTaskByIdXml = async function getTaskByIdXml() {
-    await apiXml.getTaskById(540);
+    await apiXml.getTaskById(648);
 }
 
 window.postTaskXml = async function postTaskXml() {
@@ -55,11 +55,11 @@ window.postTaskXml = async function postTaskXml() {
 }
 
 window.patchTaskXml = async function patchTaskXml() {
-    await apiXml.patchTask(383, {
+    await apiXml.patchTask(649, {
         isCompleted: false
     });
 }
 
 window.deleteTaskXml = async function deleteTaskXml() {
-    await apiXml.deleteTask(567);
+    await apiXml.deleteTask(751);
 }
